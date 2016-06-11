@@ -1,11 +1,6 @@
-$(document).ready(function(){
-    $.nodequiz();
+/**
+ * Created by patri on 2-6-2016.
+ */
+jQuery(document).ready(function(){
+
 });
-
-(function ( $ ) {
-
-    $.fn.nodequiz = function() {
-
-    };
-
-}( jQuery ));

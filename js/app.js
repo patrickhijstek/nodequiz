@@ -1,5 +1,5 @@
 $( document ).ready(function() {
-	$("#data").html("<div id='startscherm'></div>\n" + 
+	$("#data").html("<div id='startscherm'></div>\n" +
 		"<p id='loading'>Loading</p>"
 	);
 	$("#data").slideUp(3000,function(){
