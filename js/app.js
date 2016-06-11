@@ -1,5 +1,16 @@
 $( document ).ready(function() {
-	$("#data").html("<div><img id='logo' src='images/nodejs-logo.png'>\n" + 
-	"<p id='logotekst'>Quiz</p></div>" 
-		);
+	$("#data").html("<div id='startscherm'></div>\n" + 
+		"<p id='loading'>Loading</p>"
+	);
+	$("#data").slideUp(3000,function(){
+		loginPage();
+	});
+
+
+	function loginPage(){
+
+	$("#data").load("../login.html #nav1div");
+	//$("#data").show();
+}
+	
 });
