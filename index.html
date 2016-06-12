@@ -10,6 +10,7 @@
         var socket = io();
         var playerName;
         var gameId;
+        var games;
         jQuery(document).ready(function(){
             $(document).on("click", "#start", function(e){
                 e.preventDefault();
@@ -20,10 +21,26 @@
 
             $(document).on('click', ".NieuweSpel", function(e){
                 e.preventDefault();
-                socket.on('game started', function (data) {
-                    gameId = data.gameId;
-                });
+                socket.emit('start game');
+
                 NieuwSpel(playerName);
+            });
+
+            socket.on('show games', function (data) {
+                games = jQuery.parseJSON(data);
+                setTimeout(function(){
+                    Object.keys(games).forEach(function(key) {
+                        var value = games[key];
+                        console.log($('.gameList'));
+                        jQuery('.gameList').append('<li><a class="game" href="#" data-game="' + key + '">spel ' + key + '</a></li>');
+                        console.log(value);
+                    });
+                },100);
+
+            });
+
+            socket.on('game started', function (data) {
+                gameId = data.gameId;
             });
         });
     </script>
