@@ -1,7 +1,8 @@
 var app = require('http').createServer(handler)
 var io = require('socket.io')(app);
 var fs = require('fs');
-global.players = [];
+var players = [];
+var games = [];
 app.listen(3000);
 
 function handler (req, res) {
@@ -12,21 +13,33 @@ function handler (req, res) {
                 res.writeHead(500);
                 return res.end('Error loading index.html');
             }
-
             res.writeHead(200);
             res.end(data);
         });
 }
 
-var nsp = io.of('/lobby');
 io.on('connection', function (socket) {
     socket.on('disconnect', function () {
-        delete global.players[socket.id];
+        if(players[socket.id]){
+            delete games[players[socket.id].gameId];
+            delete players[socket.id];
+        }
     });
     socket.on('join lobby', function (data) {
-        global.players[socket.id] = {
+        players[socket.id] = {
             name : data.name
         };
+        socket.join('lobby');
+        socket.emit('show games', {gameId : gameId});
+        console.log(players);
     });
-});
+    socket.on('start game', function (data) {
+        var gameId = games.length;
+        socket.emit('game started', {gameId : gameId});
+        games[gameId] = {players : {player1 : socket.id}, started : false };
+        players[socket.id].gameId = gameId;
+        socket.join('game-' + gameId);
+    });
 
+
+});

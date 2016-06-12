@@ -15,10 +15,7 @@ $( document ).ready(function() {
   		$(this).addClass('selected');
   	});
 
-  $("#setPlayer").on("click", "input:submit", function(){
-    alert("form has been submitted.");
-    return false;
-});
+
 
 
 	$(".meter > span").each(function() {
@@ -32,8 +29,10 @@ $( document ).ready(function() {
 });
 
 function loginPage(){
-html = $.get( "login.html", function() {
-  $('main').html(html.responseText);
+    $.get( "http://localhost/proxy.php?url=http://localhost/login.html", function(data) {
+
+
+  $('main').html(data);
 $('main').show();
 })
   .fail(function() {
@@ -43,9 +42,9 @@ $('main').show();
 
 
 function lobbyPage(){
- html = $.get( "lobby.html", function() {
-  console.log(html.responseText);
-  $('main').html(html.responseText);
+ $.get( "http://localhost/proxy.php?url=http://localhost/lobby.html", function(data) {
+
+  $('main').html(data);
 
 })
   .fail(function() {
@@ -53,9 +52,10 @@ function lobbyPage(){
   }); 
 }
 
-function NieuwSpel(){
- html = $.get( "spel.html", function() {
-   $('main').html(html.responseText);
+function NieuwSpel(playerName){
+$.get( "http://localhost/proxy.php?url=http://localhost/spel.html", function(data) {
+   $('main').html(data);
+    $('.speler1').text(playerName);
 })
   .fail(function() {
     alert( "error" );
@@ -63,18 +63,16 @@ function NieuwSpel(){
 }
 
 function JoinSpel(id){
- html = $.get( "spel.html", function() {
-  alert("spel id = " + id);
-  $('main').html(html.responseText);
-
+$.get( "http://localhost/proxy.php?url=http://localhost/spel.html", function(data) {
+  $('main').html(data);
 })
   .fail(function() {
     alert( "error" );
   }); 
 }
 function uitslagPage(){
-  html = $.get( "uitslag.html", function() {
-  $('main').html(html.responseText);
+  $.get( "http://localhost/proxy.php?url=http://localhost/uitslag.html", function(data) {
+  $('main').html(data);
   })
     .fail(function() {
       alert( "error" );

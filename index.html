@@ -8,7 +8,24 @@
     <script src="http://localhost/js/app.js"></script>
     <script>
         var socket = io();
-        socket.emit('join lobby', { name: 'Piet' });
+        var playerName;
+        var gameId;
+        jQuery(document).ready(function(){
+            $(document).on("click", "#start", function(e){
+                e.preventDefault();
+                playerName = $('[name="playername"]').val();
+                socket.emit('join lobby', { name: playerName });
+                lobbyPage();
+            });
+
+            $(document).on('click', ".NieuweSpel", function(e){
+                e.preventDefault();
+                socket.on('game started', function (data) {
+                    gameId = data.gameId;
+                });
+                NieuwSpel(playerName);
+            });
+        });
     </script>
 	<title>NodeQuiz - Start </title>
 </head>
