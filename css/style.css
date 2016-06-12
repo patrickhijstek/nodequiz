@@ -60,14 +60,22 @@ body {
 	background-color: hsla(119, 56%, 37%, 0.51);
 }
 
+/* Tables */
+table, td, th {
+	font-family:'Arial Black';
+	padding:10px;
+	text-align:center;
+	font-size: 16px;
+}
 
+table {
+	width: 80%;
+}
 /* FORMS */
 
 form {
     text-align: center;
-    font-size : 18;
-    margin-top: 25%;
-
+    font-size: 18px;
   }
 
   form input{
@@ -330,8 +338,8 @@ font-family: 'Arial Black';
 	text-align:center;
 	font-size:25px;
 	font-family:'Arial Black';
-
 }
+
 
 .vraag {
 	margin-left: 10%;
@@ -342,15 +350,43 @@ font-family: 'Arial Black';
 	vertical-align:central;
 }
 
-.antwoord {
-
-	margin-left: 20%;
-	margin-right: 20%;
-	margin-top:25px;
-	border: 5px hsla(119, 56%, 37%, 0.51) solid;
-
+.antwoorden {
 	border-radius: 15px;
 	vertical-align:central;
+
+}
+
+.antwoord{
+	margin-top:25px;
+	margin-left: 20%;
+	margin-right: 20%;
+	border: 5px hsla(119, 56%, 37%, 0.51) solid;
+	border-radius: 15px;
+	vertical-align:central;
+	color: black;
+	padding:10px;
+}
+	.antwoorden > a:link{
+		color:black;
+	}
+	.selected{
+	background-color:rgb(43, 147, 43);	
+	border: 5px black solid;
+	border-radius: 15px;
+}
+
+.nb{
+	color: black;
+	font-size:25px; 
+}
+
+.goed{
+	color: darkgreen;
+	font-size:25px; 
+}
+.fout{
+	color: darkred;
+	font-size:25px; 
 }
 /* IDs */
 
@@ -377,6 +413,7 @@ p#loading {
     padding-top: 0.2em;
     height:25%;
     background:transparent;
-    }
+    }	
+
 
 /* responsive */

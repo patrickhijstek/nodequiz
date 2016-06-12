@@ -1,4 +1,4 @@
-
+<!-- 
 <!DOCTYPE html lang="en">
 <html>
 <head>
@@ -9,7 +9,7 @@
 <body>
 	<script src="js/jquery-2.2.4.min.js"></script>
 	<script src="js/app.js"></script>
-	<main>
+	<main> -->
 		<div class="speler1">Speler1</div>
 		<div class="speler2">Speler2</div>
 		<div class="helpSpel"><a href="#helpModal">?</a></div>
@@ -18,11 +18,22 @@
 		  <span style="width: 100%"></span>
 		</div>
 		<div class="Quizkaart">
-		<div class="vraag"><span >Hier komt straks een echte vraag met 1 juist antwoord</span></div>
-		<div class="antwoord"><span id="antwoord1">Een heel mooi antwoord</span></div>
-		<div class="antwoord"><span id="antwoord2">een zeker fout antwoord</span></div>
-		<div class="antwoord"><span id="antwoord3">dit zal wel het juiste vraag</span></div>
+			<div id="vraag" class="vraag"><span >Hier komt straks een echte vraag met 1 juist antwoord</span></div>
+			<a class="antwoorden" id="A" href="#"><div class="antwoord"><span id="antwoord1">Een heel mooi antwoord</span></div></a>
+			<a class="antwoorden" id="B" href="#"><div class="antwoord"><span id="antwoord2">een zeker fout antwoord</span></div></a>
+			<a class="antwoorden" id="C" href="#"><div class="antwoord"><span id="antwoord3">dit zal wel het juiste vraag</span></div></a>
 		</div>
-</main>
+
+		<button onclick="uitslagPage()">Uitslag</button>	
+
+		<div id="helpModal" class="modalDialog">
+			<div>
+		<a href="#close" title="Close" class="close">X</a>
+		<h2>THe Node Quiz (uit nood geboren)- Help</h2><br>
+		
+		</p></p>
+	</div>
+</div>
+<!-- </main>
 </body>
-</html>
+</html> -->
