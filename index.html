@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+    <script src="/socket.io/socket.io.js"></script>
+	<link rel="styleSheet" type="text/css" href="http://localhost/css/style.css">
+    <script src="http://localhost/js/jquery-2.2.4.min.js"></script>
+    <script src="http://localhost/js/app.js"></script>
+    <script>
+        var socket = io();
+        var playerName;
+        var gameId;
+        var games;
+        jQuery(document).ready(function(){
+            $(document).on("click", "#start", function(e){
+                e.preventDefault();
+                playerName = $('[name="playername"]').val();
+                socket.emit('join lobby', { name: playerName });
+                lobbyPage();
+            });
+
+            $(document).on('click', ".NieuweSpel", function(e){
+                e.preventDefault();
+                socket.emit('start game');
+
+                NieuwSpel(playerName);
+            });
+
+            socket.on('show games', function (data) {
+                games = jQuery.parseJSON(data);
+                setTimeout(function(){
+                    Object.keys(games).forEach(function(key) {
+                        var value = games[key];
+                        console.log($('.gameList'));
+                        jQuery('.gameList').append('<li><a class="game" href="#" data-game="' + key + '">spel ' + key + '</a></li>');
+                        console.log(value);
+                    });
+                },100);
+
+            });
+
+            socket.on('game started', function (data) {
+                gameId = data.gameId;
+            });
+        });
+    </script>
+	<title>NodeQuiz - Start </title>
+</head>
+<body>
+	<main id="data"></main>
+</body>
+</html>
