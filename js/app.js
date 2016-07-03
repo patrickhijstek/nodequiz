@@ -12,13 +12,7 @@ $( document ).ready(function() {
 
 
 
-  $('.antwoorden').on('click', 'div', function(event) {
-  		event.preventDefault();
-  		$('.antwoorden > div').removeClass('selected');
-  		
-  		$(this).addClass('selected');
-  	});
-
+  
 
 
 
@@ -30,7 +24,19 @@ $( document ).ready(function() {
     	width: $(this).data("origWidth") // or + "%" if fluid
     	}, 10000);
 	});
+
+$('.antwoorden').on('click', 'div', function(event) {
+      $('.antwoorden > div').removeClass('selected');
+      console.log( $(this).value);
+      $(this).addClass('selected');
+    });
+
 });
+
+function ButtonDataSchool(target){
+  $('div'+target).toggle("slow");
+}
+
 
 function loginPage(){
     $.get( "http://localhost/proxy.php?url=http://localhost/login.html", function(data) {
@@ -82,15 +88,17 @@ function uitslagPage(){
       alert( "error" );
     }); 
 }
+// function loadQuestion(){}
 
-        // reads json file that contains questions
-            $(document).ready(function(){
-                loadQuestion();
-                $.getJSON(questions.json, function (result){
-                    $result = result;
-                })
-            })
+//         // reads json file that contains questions
+//             $(document).ready(function(){
+//                 loadQuestion();
+//                 $.getJSON(questions.json, function (result){
+//                     $result = result;
+//                 });
+//             });
         
+
 	function compareAnswers()
         {
             // compare given answers
@@ -126,12 +134,12 @@ function uitslagPage(){
             questionsPlayer1.forEach(function(value)
             {
                 player1 = player1 + value;
-            })
+            });
             // loops over array to add values
             questionsPlayer2.forEach(function(value)
             {
                 player2 = player2 + value;
-            })
+            });
             
             if(player1 > player2)
             {
@@ -145,4 +153,9 @@ function uitslagPage(){
             return 0;
             
             
+        }
+
+        function setAnswer(target){
+           $('.antwoord').removeClass('selected');
+          $(target + '>div').addClass('selected');
         }
