@@ -21,7 +21,7 @@ function handler (req, res) {
 io.on('connection', function (socket) {
     socket.on('disconnect', function () {
         if(players[socket.id]){
-            //delete games[players[socket.id].gameId];
+            delete games[players[socket.id].gameId];
             delete players[socket.id];
         }
     });
@@ -30,20 +30,23 @@ io.on('connection', function (socket) {
             name : data.name
         };
         socket.join('lobby');
-        console.log(games);
         socket.emit('show games', JSON.stringify(games));
-
     });
     socket.on('start game', function (data) {
-        var gameId = 'game-' + socket.id;
-        console.log(gameId);
-        socket.emit('game started', {gameId : gameId});
-
-        games[gameId] = {players : {player1 : socket.id}, started : false };
-        console.log(games);
-        players[socket.id].gameId = gameId;
-        socket.join('game-' + gameId);
+        socket.emit('game started', {gameId : data.gameid});
+        games[data.gameid] = {players : {player1 : socket.id}, started : false };
+        players[socket.id].gameId = data.gameid;
+        socket.join(data.gameid);
     });
-
+    socket.on('join game', function (data) {
+        var gamePlayers = {
+            player1: players[games[data.gameid].players.player1].name
+        };
+        games[data.gameid].players.player2 = socket.id;
+        players[socket.id].gameId = data.gameid;
+        console.log(data.gameid);
+        socket.join(data.gameid);
+        io.to(data.gameid).emit('both ready', gamePlayers);
+    });
 
 });
