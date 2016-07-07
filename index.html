@@ -7,7 +7,7 @@
     <script src="http://localhost/js/jquery-2.2.4.min.js"></script>
     <script src="http://localhost/js/app.js"></script>
     <script>
-        var socket = io();
+        var socket = io.connect('http://localhost:3000');
         var playerName;
         var gameId;
         var games;
