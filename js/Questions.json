@@ -1,5 +1,5 @@
 [{
-    "question1" : "Hoe lang is de chinese muur?",
+    "question" : "Hoe lang is de chinese muur?",
     "answer1" : "3.509 kilometer",
     "answer2" : "6.440 kilometer",
     "answer3" : "11.000 kilometer",
@@ -7,7 +7,7 @@
 },
 
 {
-    "question2" : "Voor welke sporters waren de Olympische spelen oorspronkelijk bedoeld?",
+    "question" : "Voor welke sporters waren de Olympische spelen oorspronkelijk bedoeld?",
     "answer1" : "Amateursporters",
     "answer2" : "Sporters jonger dan 16 jaar",
     "answer3" : "Beroepssporters",
@@ -15,7 +15,7 @@
 },
 
 {
-    "question3" : "Hoe wordt iemand die aan judo doet genoemd?",
+    "question" : "Hoe wordt iemand die aan judo doet genoemd?",
     "answer1" : "Judoko",
     "answer2" : "Judoku",
     "answer3" : "Judoka",
@@ -23,7 +23,7 @@
 },
 
 {
-    "question4" : "Waardoor valt Ranomi op binnen de estafetteploeg?",
+    "question" : "Waardoor valt Ranomi op binnen de estafetteploeg?",
     "answer1" : "Ze is de oudste van het viertal",
     "answer2" : "Ze is de jongste van het viertal",
     "answer3" : "Ze heeft de meeste olympische plakken van het viertal",
@@ -31,7 +31,7 @@
 },
 
 {
-    "question5" : "Hoeveel meter wordt er gezwommen bij het Olympische triatlon?",
+    "question" : "Hoeveel meter wordt er gezwommen bij het Olympische triatlon?",
     "answer1" : "500",
     "answer2" : "1000",
     "answer3" : "1500",
@@ -39,7 +39,7 @@
 },
 
 {
-    "question6" : "Welke balsport stond in 2008 voor het laatst op het programma?",
+    "question" : "Welke balsport stond in 2008 voor het laatst op het programma?",
     "answer1" : "Softbal",
     "answer2" : "Blaasvoetbal",
     "answer3" : "Volleybal",
@@ -47,7 +47,7 @@
 },
 
 {
-    "question7" : "Aan welk water ligt Amsterdam?",
+    "question" : "Aan welk water ligt Amsterdam?",
     "answer1" : "De IJssel",
     "answer2" : "Het IJ",
     "answer3" : "De Amer",
@@ -55,22 +55,22 @@
 },
 
 {
-    "question8" : "Hoe hoog ligt Salt Lake City boven de zeespiegel?",
+    "question" : "Hoe hoog ligt Salt Lake City boven de zeespiegel?",
     "answer1" : "650 meter",
     "answer2" : "2 meter",
-    "Corrctanswer" : "1300 meter",
+    "answer3" : "1300 meter",
     "correct" : "answer3"
 },
 
 {
-    "question9" : "Wat is een bekende bijnaam voor Amsterdam?",
+    "question" : "Wat is een bekende bijnaam voor Amsterdam?",
     "answer1" : "Mokum",
     "answer2" : "Mopperstad",
     "answer3" : "Mookhoek",
     "correct" : "answer1"
 },
 {
-    "question10" : "Wat is bij de paardensport een grote volte?",
+    "question" : "Wat is bij de paardensport een grote volte?",
     "answer1" : "Een hindernisbak met water",
     "answer2" : "Een hengst met een schofthoogte boven de 2 meter",
     "answer3" : "Een cirkel met een doorsnede van 20 meter",
@@ -78,14 +78,14 @@
 },
 
 {
-    "question11" : "Tot welke judoklasse behoort Ruben Houkes?",
+    "question" : "Tot welke judoklasse behoort Ruben Houkes?",
     "answer1" : "Zwaargewicht",
     "answer2" : "Lichtgewicht",
     "answer3" : "Overgewicht",
     "correct" : "answer2"
 },
 {
-    "question12" : "In welk jaar ontstond de stad Garmisch-Partenkirchen?",
+    "question" : "In welk jaar ontstond de stad Garmisch-Partenkirchen?",
     "answer1" : "1935",
     "answer2" : "1719",
     "answer3" : "114",
@@ -93,7 +93,7 @@
 },
 
 {
-    "question13" : "Bij welke club maakte Piet Vethuizen zijn debuut in het betaalde voetbal?",
+    "question" : "Bij welke club maakte Piet Vethuizen zijn debuut in het betaalde voetbal?",
     "answer1" : "N.E.C.",
     "answer2" : "Vitesse",
     "answer3" : "De Graafschap",
@@ -101,7 +101,7 @@
 },
 
 {
-    "question14" : "Waarom ging in 1896 het onderdeel roeien niet door?",
+    "question" : "Waarom ging in 1896 het onderdeel roeien niet door?",
     "answer1" : "Er waren geen goede boten",
     "answer2" : "Er waren wel boten mar geen roeispanen",
     "answer3" : "Er stond teveel wind",
@@ -109,7 +109,7 @@
 },
 
 {
-    "question15" : "Uit welk land is judo oorspronkelijk afkomstig?",
+    "question" : "Uit welk land is judo oorspronkelijk afkomstig?",
     "answer1" : "Nepal",
     "answer2" : "China",
     "answer3" : "Japan",
@@ -117,14 +117,14 @@
 },
 
 {
-    "question16" : "Wat is geen onderdeel van de Winterspelen?",
+    "question" : "Wat is geen onderdeel van de Winterspelen?",
     "answer1" : "Snowboarden",
     "answer2" : "IJsvissen",
     "answer3" : "Kunstrijden",
     "correct" : "answer2"
 },
 {
-    "question17" : "Behalve een wintersportbestemming is Innsbruck ook een...",
+    "question" : "Behalve een wintersportbestemming is Innsbruck ook een...",
     "answer1" : "Tropisch zwemparadijs",
     "answer2" : "Universiteitsstad",
     "answer3" : "Safaripark",
@@ -132,7 +132,7 @@
 },
 
 {
-    "question18" : "Waar werden de Olympische Zomerspelen in 1924 gehouden?",
+    "question" : "Waar werden de Olympische Zomerspelen in 1924 gehouden?",
     "answer1" : "Lyon",
     "answer2" : "Marseille",
     "answer3" : "Parijs",
@@ -140,7 +140,7 @@
 },
 
 {
-    "question19" : "Wanneer deden er voor het eerst vrouwen mee aan waterpolo op de Olympische spelen?",
+    "question" : "Wanneer deden er voor het eerst vrouwen mee aan waterpolo op de Olympische spelen?",
     "answer1" : "1900",
     "answer2" : "1950",
     "answer3" : "2000",
@@ -148,7 +148,7 @@
 },
 
 {
-    "question20" : "In welke olympische stad staat het beroemde Colosseum?",
+    "question" : "In welke olympische stad staat het beroemde Colosseum?",
     "answer1" : "Barcelona",
     "answer2" : "Rome",
     "answer3" : "Moskou",
@@ -156,7 +156,7 @@
 },
 
 {
-    "question21" : "Op welk onderdeel behaalde Nederland twee keer goud in 1920?",
+    "question" : "Op welk onderdeel behaalde Nederland twee keer goud in 1920?",
     "answer1" : "Hardlopen",
     "answer2" : "Zwientje tik",
     "answer3" : "Zeilen",
@@ -164,7 +164,7 @@
 },
 
 {
-    "question22" : "Hoe heet de judoklasse 'mannen tot 60 kilo'?",
+    "question" : "Hoe heet de judoklasse 'mannen tot 60 kilo'?",
     "answer1" : "Superlichtgewicht",
     "answer2" : "Extra lichtgewicht",
     "answer3" : "Zwaargewicht",
@@ -172,7 +172,7 @@
 },
 
 {
-    "question23" : "Hoeveel inwoners heeft Seoul?",
+    "question" : "Hoeveel inwoners heeft Seoul?",
     "answer1" : "11 miljoen",
     "answer2" : "7 miljoen",
     "answer3" : "4 miljoen",
@@ -180,7 +180,7 @@
 },
 
 {
-    "question24" : "Van welk land is Seoul de hoofdstad?",
+    "question" : "Van welk land is Seoul de hoofdstad?",
     "answer1" : "Zuid-Korea",
     "answer2" : "Taiwan",
     "answer3" : "Noord-Korea",
@@ -189,7 +189,7 @@
 },
 
 {
-    "question25" : "In welk jaar werd voor het eerst de olympische vlam aangestoken?",
+    "question" : "In welk jaar werd voor het eerst de olympische vlam aangestoken?",
     "answer1" : "1896",
     "answer2" : "1928",
     "answer3" : "1912",

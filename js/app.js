@@ -38,18 +38,6 @@ $( document ).ready(function() {
 		loginPage();
 	});
 
-
-
-
-    $(".meter > span").each(function() {
-  $(this)
-    .data("origWidth", $(this).width())
-    .width(0)
-    .animate({
-    	width: $(this).data("origWidth") // or + "%" if fluid
-    	}, 10000);
-	});
-
 $('.antwoorden').on('click', 'div', function(event) {
       $('.antwoorden > div').removeClass('selected');
       console.log( $(this).value);
@@ -65,9 +53,6 @@ function ButtonDataSchool(target){
 
 function loginPage(){
     $.get( "http://localhost/proxy.php?url=http://localhost/login.html", function(data) {
-
-
-
         $('main').html(data);
         $('main').show();
     })
