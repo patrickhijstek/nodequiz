@@ -16,20 +16,22 @@
         var givenAnswer = false;
         var timer = 10;
         var correct = false;
+        var result = null;
         jQuery(document).ready(function(){
+            //Go to lobby
             $(document).on("click", "#start", function(e){
                 e.preventDefault();
                 playerName = $('[name="playername"]').val();
                 socket.emit('join lobby', { name: playerName });
                 lobbyPage();
             });
-
+            //Start new game
             $(document).on('click', ".NieuweSpel", function(e){
                 e.preventDefault();
                 $.get("http://localhost/unique_id.php", function (data) {
                     var gameid = data;
                     gameStarter = true;
-                    socket.emit('start game', { gameid: gameid });
+                    socket.emit('start game', { gameid: gameid, name: playerName });
                     nieuwSpel(playerName);
                 })
                         .fail(function () {
@@ -37,37 +39,42 @@
                         });
 
             });
-
+            //Join game
             $(document).on('click', ".gameList .game", function(e){
                 e.preventDefault();
                 socket.emit('join game', { name: playerName, gameid: $(this).attr('data-game') });
             });
-
+            //Choose answer
             $(document).on('click', ".antwoorden", function(e){
                 e.preventDefault();
                 answer = $(this).attr('id');
             });
-
+            //Show available games
             socket.on('show games', function (data) {
                 games = jQuery.parseJSON(data);
                 setTimeout(function(){
                     Object.keys(games).forEach(function(key) {
-                        jQuery('.gameList').append('<li><a class="game" href="#" data-game="' + key + '">spel ' + key + '</a></li>');
+                        if(games[key].started == false)
+                            jQuery('.gameList').append('<li><a class="game" href="#" data-game="' + key + '">spel ' + key + '</a></li>');
                     });
                 },100);
             });
-
+            //Game started event
             socket.on('game started', function (data) {
                 gameId = data.gameId;
             });
-
+            //Event when both players are ready
             socket.on('both ready', function (data) {
                 joinSpel(data.player1, data.player2);
                 if(gameStarter == true){
-                    socket.emit('load question', { gameid: gameId});
+                    setTimeout(function(){
+                        socket.emit('load question', { gameid: gameId});
+                    }, 100);
+                }else{
+                    gameId = data.gameId;
                 }
             });
-
+            //Get the question event and render it
             socket.on('send question', function (data) {
                 $('#vraag').text(data.question);
                 $('#antwoord1').text(data.answer1);
@@ -97,9 +104,10 @@
                     timer--;
                 }, 1000);
             });
-
+            //When game is finished render the results
             socket.on('game complete', function (data) {
-                console.log(data);
+                result = data;
+                uitslagPage(result);
             });
         });
     </script>
